@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+    <meta charset="utf-8">
+    <title>05hover.html</title>
+</head>
+<body> 
+    <img id="img1" class="i" src="images/star.gif" />
+
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>
+        /*1.flag=true*/
+        /*2.$(selector).off("mouseenter mouseleave")*/
+        //$("img").hover(function () {
+        //    $(this).attr("src", "images/chngstar.gif")
+        //}, function () { $(this).attr("src", "images/star.gif") })
+
+        //$("img").hover(function () { flag = false });
+
+        //1. click =>flag->true,false 
+        //2. unbinding  => $(selector).off("mouseenter mouseleave")//hover
+        let flag = true;
+        $("img").hover(function () {  //進入星星後變顏色
+            console.log(flag);
+            if (flag) {
+                $(this).attr("src", "images/chngstar.gif")
+            }
+
+        }, function () {
+                console.log(flag);  //出去星星後變顏色
+            $(this).attr("src", "images/star.gif")
+        })
+
+        $("img").click(function () {  //點擊後就不會在變顏色
+            flag = false
+        }) 
+                    
+    </script> 
+</body>  
+</html>

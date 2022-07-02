@@ -1,0 +1,61 @@
+JavaScript Library 函數(式)庫
+
+<h1 id="h"><i>this is heading</i></h1>
+
+//Css selector
+1.type
+2.id
+3.class
+
+JavaScript 操作對象是 element,object
+jQuery 操作對象 多個物件 selector 選擇器 選取器
+
+//JavaScript
+let hObj=document.getElementById("h");  //object,element
+let hObj=document.querySelector("h1");  //element
+let hObj=document.querySelector("#h");
+let hObjAll=document.querySelectorAll("h1");  //多個物件 NodeList
+let hObjAll=document.querySelectorAll("#h");
+
+let hObjContent=hObj.innerHTML;  //property 解譯標籤
+let hObjContent=hObj.textContent;//firefox 內容視為純文字
+let hObjContent=hObj.innerText; //IE8
+let hObjContent=hObjAll[0].innerHTML;
+
+//jQuery
+let hSelector=jQuery("#h");
+let hSelector=$("#h");
+let hSelector=$("h1");
+let hSelectorContent=hSelector.html();
+let hSelectorContent=hSelector.text();
+let hSelectorContent=$("#h").html();
+
+//JavaScript event handler寫法
+1. <h1 onclick="f1();">method 1</h1>
+function f1(){
+
+}
+2. <h1 id="h">method 2</h1>
+   //JS
+   document.querySelector("#h").onclick=f1;
+document.querySelector("#h").onclick=function(){
+	alert("method 2");  //匿名函數
+}
+3. document.querySelector("#h").addEventListener("click",f1,false);
+   document.querySelector("#h").attachEvent("click",f1);
+    function f1(){  //函數宣告
+	alert("method 1 2 3");
+   }  //jQuery沒有這種寫法
+
+//jQuery
+$("#h").click(f);
+function f(){
+	alert("method");
+}
+$("#h").click(function(){  //匿名函數
+	alert("method");
+}); 
+$("#h").on("click",function(){...}); 
+
+AJAX Asynchronous JavaScript and XML 非同步傳輸
+

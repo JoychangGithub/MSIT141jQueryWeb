@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01documentReady.html</title>
+    <!--<script src="../js/jquery-3.6.0.min.js"></script>-->  <!--匯入函示庫:使用下載的-->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous">
+    </script>
+    <script>
+        //ready是一個事件，等到DOMTree產生後會執行這個事件
+        //寫法1:
+        jQuery(document).ready(function () { $("h1").css("color", "red"); })
+
+        //寫法2:
+        //$(function () { $("h1").css("color", "red"); })
+
+       
+
+       
+
+    </script>
+
+</head>
+<body>
+    <h1>write less,do more</h1>
+    <!--使用cdn-->
+   
+    <!--<script>
+        $("h1").css("color", "yellow");
+    </script>-->
+</body>
+</html >

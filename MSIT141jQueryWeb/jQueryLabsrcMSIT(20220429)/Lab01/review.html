@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1 id="h">this is heading1</h1>
+    <h1 id="h">this is heading2</h1>
+    <h1 id="h">this is heading3</h1>
+    <script src="../js/jquery-3.6.0.min.js"></script>  <!--匯入函示庫-->
+    <script>
+        //JavaScript:讀取物件
+        let hObj = document.getElementById("h");  //object,element
+        //console.log(hObj);
+        hObj = document.querySelector("h1");  //element
+        //console.log(hObj);
+        hObj = document.querySelector("#h");
+        //console.log(hObj);
+        let hObjAll = document.querySelectorAll("h1");  //多個物件 NodeList
+        //console.log(hObj);
+        hObjAll = document.querySelectorAll("#h");
+        //console.log(hObj);
+
+        //JavaScript:讀取物件內容
+        let hObjContent = hObj.innerHTML;  //property 解譯標籤
+        hObjContent = hObj.textContent;//firefox 內容視為純文字
+        console.log(hObjContent);  //this is heading1
+        hObjContent = hObj.innerText; //IE8
+        console.log(hObjContent);  //this is heading1
+        hObjContent = hObjAll[0].innerHTML;
+        console.log(hObjContent);  //this is heading1
+    </script>
+    <h1 id="jm2">this is jm2</h1>
+    <script>
+        //JavaScript event handler寫法
+        /*寫法1. */
+        < h1 onclick="f1();" > method 1</h1 >
+        function f1() {
+            return "jQuery method";
+        }
+        /*寫法2. */
+        < h1 id="h" > method 2</h1 >
+        //JS
+        document.querySelector("#h").onclick = f1;
+        //document.querySelector("#h").onclick = function () {
+        //    alert("method 2");  //匿名函數       
+        //}
+        /*寫法3. */
+        document.querySelector("#h").addEventListener("click", f1, false);
+        //document.querySelector("#h").attachEvent("click", f1);
+        //function f1() {  //函數宣告
+        //    alert("method 1 2 3");
+        //}  //jQuery沒有這種寫法
+
+
+        console.log("================================");
+
+        //jQuery:讀取物件
+        let hSelector = jQuery("#h"); //多個物件 //S.fn.init(1):0: h1#h length: 1
+        //console.log(hSelector);
+        hSelector = $("#h");  //S.fn.init(1):0: h1#h length: 1
+        //console.log(hSelector);
+        hSelector = $("h1");  //S.fn.init(3) 0: h1#h 1: h1#h 2: h1#h
+        //console.log(hSelector);
+
+        //jQuery:讀取物件內容
+        let hSelectorContent = hSelector.html(); //this is heading1
+        hSelectorContent = hSelector.text();
+        console.log(hSelectorContent); //this is heading1this is heading2this is heading3
+        hSelectorContent = $("#h").html();  //官網:If the selector expression matches more than one element, only the first match will have its HTML content returned.
+        console.log(hSelectorContent);  //this is heading1
+
+        //jQuery
+        /*寫法1. */
+        $("#h").click(f);
+        function f() {
+            alert("method");
+        }
+        /*寫法2. */
+        $("#h").click(function () {  //匿名函數
+            alert("method");
+        });
+        /*寫法3. */
+        //$("#h").on("click", function () {...}); 
+
+    </script>
+</body>
+</html>

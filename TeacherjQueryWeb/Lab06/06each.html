@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06each.html</title>   
+</head>
+<body>
+    <h2>Drinks</h2>
+    <ul>
+        <li>Coffee</li>
+        <li>Juice</li>
+        <li>Tea</li>
+    </ul>
+    <table>
+        <tr>
+            <td>A</td>
+            <td>B</td>
+            <td>C</td>
+        </tr>
+    </table>
+    <p id="demo"></p>
+    <hr>
+    <input type="button" id="btn1" value="selector.each()">
+
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>
+        //console.log($("li"));
+        //console.log($("li")[1]);
+        //console.log($("td"));
+        //console.log($("td")[1])  //<td>B</td>
+        //console.log($("td").get(2))  //<td>C</td>
+
+        $("#btn1").click(function(){                             
+            $("li").each(function(index,element){
+                console.log(index);
+                console.log(element);  //JS element 
+                console.log(this);
+                console.log($(this).text());
+                $("#demo").append(`<li>${$(this).text()}</li>`)
+            });                  
+        });
+    </script>
+</body>
+</html>

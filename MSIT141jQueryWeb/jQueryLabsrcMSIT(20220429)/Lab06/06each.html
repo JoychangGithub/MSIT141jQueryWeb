@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06each.html</title>   
+</head>
+<body>
+    <h2>Drinks</h2>
+    <ul>
+        <li>Coffee</li>
+        <li>Juice</li>
+        <li>Tea</li>
+    </ul>
+    <p id="demo"></p>
+    <hr>
+    <input type="button" id="btn1" value="selector.each()">
+
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>
+        console.log($("li"));
+        console.log($("li")[1]); //將jQuery轉為js元素 方法1
+        console.log($("td"));
+        console.log($("li").get(2)); //將jQuery轉為js元素 方法2 //<li>Tea</li>
+
+
+        $("#btn1").click(function(){                             
+            $("li").each(function (index, element) {
+                console.log(index);   //0
+                console.log(element); //<li>Coffee</li>
+                console.log(this); //<li>Coffee</li>
+                console.log($(this).text());  //Coffee
+                //$("#demo").text(`<li>${$(this).text()}</li>`)  //<li>Tea</li>
+                $("#demo").append(`<li>${$(this).text()}</li>`)  //Tea
+            });                  
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+JavaScript Library 函數(式)庫 很多function 組成的
+function 呼叫  method();
+
+<h1 id="h">this is heading</h1>
+
+//Css selector
+1.type
+2.id
+3.class
+
+JavaScript 操作對象是 element,object
+語法
+object.property
+object.method()
+
+jQuery 操作對象 多個物件 selector 選擇器 選取器
+語法
+jQuery(selector).action();  //method()
+jQuery(selector).property
+
+
+//JavaScript  讀取物件
+let hObj=document.getElementById("h");  //object,element
+let hObj=document.querySelector("h1");  //element
+let hObj=document.querySelector("#h");
+let hObjAll=document.querySelectorAll("h1");  //多個物件 NodeList
+let hObjAll=document.querySelectorAll("#h");
+
+let hObjContent=hObj.innerHTML;  //property 解譯標籤
+let hObjContent=hObj.textContent;//firefox 內容視為純文字
+let hObjContent=hObj.innerText; //IE8 內容視為純文字
+let hObjContent=hObjAll[0].innerHTML;
+
+//jQuery
+let hSelector=jQuery("#h");//多個物件
+let hSelector=$("#h");
+let hSelector=$("h1");
+let hSelectorContent=hSelector.html();
+let hSelectorContent=hSelector.text();
+let hSelectorContent=$("#h").html();
+
+//JavaScript event handler寫法
+1. <h1 onclick="f1();">method 1</h1>
+function f1(){
+
+}
+2. <h1 id="h">method 2</h1>
+   //JS
+   document.querySelector("#h").onclick=f1;
+document.querySelector("#h").onclick=function(){
+	alert("method 2");  //匿名函數
+}
+3. document.querySelector("#h").addEventListener("click",f1,false);  //firefox
+   document.querySelector("#h").attachEvent("onclick",f1);  //IE8 
+    function f1(){  //函數宣告
+	alert("method 1 2 3");
+   }  //jQuery沒有這種寫法
+
+//jQuery
+$("#h").click(f);
+function f(){
+	alert("method");
+}
+$("#h").click(function(){  //匿名函數
+	alert("method");
+}); 
+$("#h").on("click",function(){...}); 
+
+AJAX Asynchronous JavaScript and XML 非同步傳輸
+
+1. JavaScript JS+JSON
+2. jQuery jQuery+JSON
+3. HTML5 flash +JSON
+
+<h1 style="...">
+
+JS 物件
+1. document
+2. window
+3. this
+
+
+//鏈式chain
+//JS
+object.property.method();  
+object.property.property  //object.style.color="red";
+object.method().preperty
+//jQuery
+$(selector).action();
+$(selector).property.action();
+$(selector).action().action();
+
+
+//p20
+checked
+1. type=checkbox
+2. type=radio
+3. <select>
+<option selecte="selected">A</select>
+
+成對標籤<p>content</p>
+單一標籤<img><input><br><hr>
+
+//p73
+{property:value,property:value}
+{event:function(){},event:functin(){}}
+
+
+在 .btn-danger 上按 click，jQuery會執行事件氣泡(bubbling)階段，
+往上升到 #idtable，jQuery 會將table 下所有 <tr></tr>重新繫結
+
+css -> <h1 style="...">
+
+數量 單價 金額 目前 .number 所屬的 <tr></tr>
+  
+字串轉換為數值
+
+680
+227
+453
+
+
+
+

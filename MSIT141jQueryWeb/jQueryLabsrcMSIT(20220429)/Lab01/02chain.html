@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02chain.html</title>
+</head>
+<body>
+    <h1>write less, do more1</h1>
+    <h1>write less, do more2</h1>
+    <h1>write less, do more3</h1>
+    <h1>write less, do more4</h1>
+    <h1>write less, do more5</h1>     
+    
+   <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>
+
+        //console.log($(function () { $("h1").css("color", "red").css("color") })); //回傳jQuery.fn.init(1):selector
+        //console.log($(function () { $("h1").css("color")}));
+       //console.log($(function () { $("h1").css("color").css("color", "red") })); //$(...).css(...).css is not a function
+
+        //jQuery匿名函數:寫成3行
+        $("h1").css("color", "green");
+        $("h1").mouseover(function () {$(this).css("color","red");});
+        $("h1").mouseout(function () {$(this).css("color","green");});
+
+        //jQuery匿名函數:寫成1行
+        //$(document).ready(function(){
+        //   $("h1").css("color","green");
+        //   $("h1").mouseover(function(){
+        //       $(this).css("color","red");
+        //   });
+        //   $("h1").mouseout(function(){
+        //       $(this).css("color","green");
+        //   });        
+        //});
+
+        //jQuery函式宣告
+       
+       //$("h1").css("color","green").mouseover(over).mouseout(out); //$(seletor).action().action()
+           
+       // function over() { $(this).css("color", "red");}
+       // function out() { $(this).css("color", "green");}
+
+        //jQuery箭頭函式
+
+        //$("h1").css("color", "blue").mouseover(() =>
+        //{ console.log(this); console.log($(this)); let that = event.currentTarget; $(that).css("color", "red") }).
+        //    mouseout(() => { let that = event.currentTarget; $(that).css("color", "blue") })
+        
+    </script>
+
+</body>
+</html>
